@@ -20,9 +20,8 @@ code {
 
 .customSlider {
   /* max width of your slider */
-  max-width: 300px;
-  /* Optional: Only If you want to center your slider in the page */
-  margin: auto;
+  width: 300px;
+  float: left;
 }
 
 .customSlider-track {
@@ -53,4 +52,12 @@ code {
 
 .customSlider-thumb:hover {
   box-shadow: 0 0 0 8px var(--main-color-hover);
+}
+
+.slider-wrapper {
+  width: 400px;
+}
+
+.slider-update {
+  float: right;
 }

@@ -9,7 +9,6 @@ const Slider = (props) => {
     const url = 'http://' + server_ip + ':8080/' + fixture + '/' + attribute;
 
     const [currentValue, setCurrentValue] = useState(updateValue());
-    setInterval(updateValue, 5000);
 
     function updateValue() {
         fetch(url)
@@ -27,17 +26,19 @@ const Slider = (props) => {
         setCurrentValue(newValue);
     }
 
-
     return (
-        <ReactSlider 
-            className="customSlider"
-            trackClassName="customSlider-track"
-            thumbClassName="customSlider-thumb"
-            min={0}
-            max={127}
-            value={currentValue}
-            onChange={handleSliderChange}
-        />
+        <div class="slider-wrapper">
+            <ReactSlider 
+                className="customSlider"
+                trackClassName="customSlider-track"
+                thumbClassName="customSlider-thumb"
+                min={0}
+                max={127}
+                value={currentValue}
+                onChange={handleSliderChange}
+            />
+            <button class="slider-update" onClick={updateValue}>Update</button>
+        </div>
     );
 };
 
