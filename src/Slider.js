@@ -18,7 +18,6 @@ const Slider = (props) => {
 
 
     const handleSliderChange = (newValue) => {
-        console.log(newValue);
         fetch(url  + '/' + newValue, {
             method: 'POST'
         });
@@ -28,6 +27,7 @@ const Slider = (props) => {
 
     return (
         <div class="slider-wrapper">
+            <span>{props.name}</span>
             <ReactSlider 
                 className="customSlider"
                 trackClassName="customSlider-track"
